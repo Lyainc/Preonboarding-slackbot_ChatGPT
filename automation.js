@@ -10,11 +10,14 @@ function sendMessage(e) {
   
   // Set up the Slack webhook URL and message
   var webhookUrl = "https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK/URL";
-  
+  var timestamp = values[0];
+  var formattedDate = Utilities.formatDate(new Date(timestamp), 'Asia/Seoul', 'yyyy-MM-dd');
+
   // Define the message
   var payload = {
     "text" : "*[신규 입사자 알림]*" + "\n" + "\n" +
     "-----------------------------" + "\n" + "\n" +
+    "- 제출 일자" + formattedDate + "\n" +
     "- 이름: " + data[1] + "\n" +
     "..."
   };
