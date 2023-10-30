@@ -1,9 +1,9 @@
-function sendMessage(e) {
+function sendMessage() {
   // Get the sheet where the new row was added
-  var sheet = e.range.getSheet();
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   
-  // Get the row number where the new data was added
-  var row = e.range.getRow();
+  // Find the last row with data
+  var row = sheet.getLastRow();
   
   // Get the values from the new row
   var values = sheet.getRange(row, 1, 1, sheet.getLastColumn()).getValues()[0];
