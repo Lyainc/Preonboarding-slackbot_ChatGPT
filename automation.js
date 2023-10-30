@@ -11,17 +11,12 @@ function sendMessage(e) {
   // Set up the Slack webhook URL and message
   var webhookUrl = "https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK/URL";
   
-  // Define the message as an array of strings (each string represents a line)
-  var message = [
-    "This is the first line of your message.",
-    "This is the second line.",
-    "You can add as many lines as you want.",
-    "Just keep adding strings to the array."
-  ];
-
-  // Create the payload for the Slack message
+  // Define the message
   var payload = {
-    "text": message.join('\n') // Join the array with line breaks
+    "text" : "*[신규 입사자 알림]*" + "\n" + "\n" +
+    "-----------------------------" + "\n" + "\n" +
+    "- 이름: " + data[1] + "\n" +
+    "..."
   };
 
   // Configure the options for the HTTP request to Slack
